@@ -1,3 +1,19 @@
+var codes = [
+  { code: "AA", name: "Aggravated Assault", category: "violent" },
+  { code: "Mu", name: "Murder", category: "violent" },
+  { code: "Ro", name: "Robbery", category: "violent" },
+  { code: "SA", name: "Simple Assault", category: "violent" },
+  { code: "Ar", name: "Arson", category: "property" },
+  { code: "Bu", name: "Burglary", category: "property" },
+  { code: "Th", name: "Theft", category: "property" },
+  { code: "Va", name: "Vandalism", category: "property" },
+  { code: "VT", name: "Vehicle Theft", category: "property" },
+  { code: "Al", name: "Alcohol", category: "quality" },
+  { code: "DP", name: "Disturbing the Peace", category: "quality" },
+  { code: "Na", name: "Narcotics", category: "quality" },
+  { code: "Pr", name: "Prostitution", category: "quality" }
+];
+
 var crimes = [
   { id: "09-900792", code: "Th", date: "2009-03-20T00:00:00-07:00" },
   { id: "09-020138", code: "SA", date: "2009-03-20T00:00:00-07:00" },
@@ -98,9 +114,12 @@ function generate_random(from, to, fixed) {
 
 function get_data() {
     for( i=0; i < crimes.length; i++ ){
-        crimes[i].lon = generate_random( -25.00, -23.00, 3);
-        crimes[i].lat = generate_random( -21.00, -22.00, 3);
+        //@TODO: - fix generate_random return numbers out of bounds
+        crimes[i].lon = generate_random( -26.237096, 26.026961, 6);
+        crimes[i].lat = generate_random( -27.848898, 28.290067, 6);
         console.log(crimes[i]);
     }
     return crimes;
 }
+
+get_data();
