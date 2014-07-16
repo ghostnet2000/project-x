@@ -113,13 +113,11 @@ function generate_random(from, to, fixed) {
 }
 
 function get_data() {
-    for( i=0; i < crimes.length; i++ ){
-        //@TODO: - fix generate_random return numbers out of bounds
-        crimes[i].lon = generate_random( -26.237096, 26.026961, 6);
-        crimes[i].lat = generate_random( -27.848898, 28.290067, 6);
-        console.log(crimes[i]);
+    for( var i=0; i < crimes.length; i++ ){
+        crimes[i].lon = generate_random( -27.848898, -26.237096, 6);
+        crimes[i].lat = generate_random(  26.026961, 28.290067, 6);       
     }
     return crimes;
 }
 
-get_data();
+//get_data();
